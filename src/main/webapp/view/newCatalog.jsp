@@ -14,10 +14,10 @@
 <body>
 <h1>Thêm mới danh mục</h1>
 <form action="<%=request.getContextPath()%>/CatalogServlet" method="post">
-  <div>
-    <label for="id">ID</label>
-    <input type="text" id="id" name="id"/>
-  </div>
+<%--  <div>--%>
+<%--    <label for="id">ID</label>--%>
+<%--    <input type="text" id="id" name="id"/>--%>
+<%--  </div>--%>
   <div>
     <label for="name">Name</label>
     <input type="text" id="name" name="name"/>

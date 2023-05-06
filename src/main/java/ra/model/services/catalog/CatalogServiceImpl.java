@@ -37,9 +37,9 @@ public class CatalogServiceImpl implements ICatalogService{
         Connection conn = null;
         try {
             conn = ConnectionToDB.getConnection();
-            CallableStatement callSt = conn.prepareCall("{call PROC_InsertNewCatalog(?,?)}");
-            callSt.setString(1,catalog.getId());
-            callSt.setString(2, catalog.getName());
+            CallableStatement callSt = conn.prepareCall("{call PROC_InsertNewCatalog(?)}");
+//            callSt.setString(1,catalog.getId());
+            callSt.setString(1, catalog.getName());
             callSt.executeUpdate();
         }catch (Exception e) {
             e.printStackTrace();

@@ -55,7 +55,7 @@ public class CatalogServlet extends HttpServlet {
             switch (action) {
                 case "ADD":
                     Catalog newCatalog = new Catalog();
-                    newCatalog.setId(request.getParameter("id"));
+//                    newCatalog.setId(request.getParameter("id"));
                     newCatalog.setName(request.getParameter("name"));
                     boolean check = catalogServiceImpl.save(newCatalog);
                     showAllCatalog(request,response);

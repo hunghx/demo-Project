@@ -7,7 +7,7 @@ public class ConnectionToDB {
     private static String DRIVER = "com.mysql.cj.jdbc.Driver";
     private static String URL = "jdbc:mysql://localhost:3306/qlbh";
     private static String USER ="root";
-    private static String PASSWORD = "";
+    private static String PASSWORD = "Vudai1997";
     public  static Connection getConnection(){
         Connection conn = null;
         try {

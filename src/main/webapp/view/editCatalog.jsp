@@ -16,7 +16,7 @@
 <form action="<%=request.getContextPath()%>/CatalogServlet" method="post">
   <div>
     <label for="id">ID</label>
-    <input type="text" value="${catalog_edit.id}" id="id" name="id"/>
+    <input type="text" value="${catalog_edit.id}" id="id" name="id" readonly/>
   </div>
   <div>
     <label for="name">Name</label>
