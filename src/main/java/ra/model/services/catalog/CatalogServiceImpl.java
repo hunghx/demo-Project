@@ -20,8 +20,9 @@ public class CatalogServiceImpl implements ICatalogService{
             ResultSet rs= callSt.executeQuery();
             while (rs.next()) {
                 Catalog catalog = new Catalog();
-                catalog.setId(rs.getString("id"));
-                catalog.setName(rs.getString("name"));
+                catalog.setId(rs.getString(1));
+                catalog.setName(rs.getString(2));
+                catalog.setUrl(rs.getString(3));
                 list.add(catalog);
             }
         }catch (Exception e) {
@@ -37,9 +38,10 @@ public class CatalogServiceImpl implements ICatalogService{
         Connection conn = null;
         try {
             conn = ConnectionToDB.getConnection();
-            CallableStatement callSt = conn.prepareCall("{call PROC_InsertNewCatalog(?)}");
+            CallableStatement callSt = conn.prepareCall("{call PROC_InsertNewCatalog(?,?)}");
 //            callSt.setString(1,catalog.getId());
             callSt.setString(1, catalog.getName());
+            callSt.setString(2, catalog.getUrl());
             callSt.executeUpdate();
         }catch (Exception e) {
             e.printStackTrace();
@@ -55,9 +57,10 @@ public class CatalogServiceImpl implements ICatalogService{
         Connection conn = null;
         try {
             conn = ConnectionToDB.getConnection();
-            CallableStatement callSt = conn.prepareCall("{call PROC_UpdateCatalog(?,?)}");
+            CallableStatement callSt = conn.prepareCall("{call PROC_UpdateCatalog(?,?,?)}");
             callSt.setString(1,catalog.getId());
             callSt.setString(2, catalog.getName());
+            callSt.setString(3, catalog.getUrl());
             callSt.executeUpdate();
         }catch (Exception e) {
             e.printStackTrace();
@@ -97,6 +100,7 @@ public class CatalogServiceImpl implements ICatalogService{
              while (rs.next()) {
                 catalog.setId(rs.getString("id"));
                 catalog.setName(rs.getString("name"));
+                catalog.setUrl(rs.getString("url"));
             }
         }catch (Exception e) {
             e.printStackTrace();
@@ -120,6 +124,7 @@ public class CatalogServiceImpl implements ICatalogService{
                 Catalog catalog = new Catalog();
                 catalog.setId(rs.getString("id"));
                 catalog.setName(rs.getString("name"));
+                catalog.setUrl(rs.getString("url"));
                 list.add(catalog);
             }
         }catch (Exception e) {

@@ -13,7 +13,7 @@
 </head>
 <body>
 <h1>Thêm mới danh mục</h1>
-<form action="<%=request.getContextPath()%>/CatalogServlet" method="post">
+<form action="<%=request.getContextPath()%>/CatalogServlet" method="post" enctype="multipart/form-data">
 <%--  <div>--%>
 <%--    <label for="id">ID</label>--%>
 <%--    <input type="text" id="id" name="id"/>--%>
@@ -22,6 +22,10 @@
     <label for="name">Name</label>
     <input type="text" id="name" name="name"/>
   </div>
+  <div>
+    <input type="file" name="image"/>
+  </div>
+
   <button type="submit" name="action" value="ADD">Add</button>
 </form>
 </body>

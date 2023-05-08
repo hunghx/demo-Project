@@ -1,3 +1,4 @@
+drop database qlbh;
 CREATE DATABASE qlbh;
 use qlbh;
 

@@ -24,6 +24,7 @@
   <tr>
     <th>ID</th>
     <th>NAME</th>
+    <th>Image</th>
     <th colspan="2">Action</th>
 
   </tr>
@@ -33,6 +34,7 @@
     <tr>
       <td>${cat.id}</td>
       <td>${cat.name}</td>
+      <td><img width="100" src="<%=request.getContextPath()%>/image/${cat.url}"></td>
       <td><a href="<%=request.getContextPath()%>/CatalogServlet?action=EDIT&id=${cat.id}">Sửa</a></td>
       <td><a href="<%=request.getContextPath()%>/CatalogServlet?action=DELETE&id=${cat.id}">Xoá</a></td>
     </tr>
