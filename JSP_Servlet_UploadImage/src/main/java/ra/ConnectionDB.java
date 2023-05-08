@@ -7,9 +7,9 @@ import java.sql.SQLException;
 
 public class ConnectionDB {
     private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
-    private static final String URL = "jdbc:mysql://localhost:3306/UPLOAD_IMAGE_DB";
+    private static final String URL = "jdbc:mysql://localhost:3306/upload";
     private static final String USER = "root";
-    private static final String PASS = "1234$";
+    private static final String PASS = "";
 
     public static Connection openConnection(){
         Connection conn = null;
